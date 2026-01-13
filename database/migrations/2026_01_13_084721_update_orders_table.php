@@ -12,8 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('orders', function (Blueprint $table) {
-            $table->string('orderable_type');
-            $table->integer('orderable_id');
+            $table->morphs('orderable');
         });
     }
 
